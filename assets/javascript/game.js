@@ -8,34 +8,35 @@ $(document).ready(function () {
     // set your charactersAtt += 6; make sure its global and maintains its value across all 3 fights
     // if your charachter hp is <= 0 make the game end
     // else if the enemy's hp is <= 0 make the enemy's picture/buttons dissapear and allow them to select another enemy
-    
+
     var characterHP = 0;
     var characterAtt = 5;
     var enemyHP = 0;
     var enemyCounter = 0;
-    var obi = { hp: 120, counter: 10}
-    var luke = { hp: 100, counter: 5}
-    var maul = { hp: 150, counter: 15}
-    var vader = { hp: 180, counter: 20}
+    var obi = { hp: 120, counter: 10 }
+    var luke = { hp: 100, counter: 5 }
+    var maul = { hp: 150, counter: 15 }
+    var vader = { hp: 180, counter: 20 }
 
-    $("#button-Obi").on("click", function (){
+    $("#button-Obi").on("click", function () {
         setStats(obi);
+        // var img = document.getElementById("button-Obi").style.display = "none";
     });
 
-    $("#button-Luke").on("click", function (){
+    $("#button-Luke").on("click", function () {
         setStats(luke);
     });
 
-    $("#button-Maul").on("click", function (){
+    $("#button-Maul").on("click", function () {
         setStats(maul);
     });
 
-    $("#button-Vader").on("click", function (){
+    $("#button-Vader").on("click", function () {
         setStats(vader);
     });
 
-    $("#button-attack").on("click", function (){
-        if (characterHP !== 0 && enemyHP !== 0){
+    $("#button-attack").on("click", function () {
+        if (characterHP !== 0 && enemyHP !== 0) {
             characterHP = characterHP - enemyCounter;
             enemyHP = enemyHP - characterAtt;
             console.log("Your HP: " + characterHP);
@@ -45,13 +46,49 @@ $(document).ready(function () {
         characterAtt = characterAtt + 5;
     });
 
-    function setStats(name){
+    function setStats(name) {
         if (characterHP === 0) {
-            characterHP = name.hp;            
+            characterHP = name.hp;
+
+            if (name === obi) {
+                document.getElementById("button-Obi").style.display = "none";
+                var r = $('<button id="chosenCharacter" class="btn btn-success"><img width="200" height="150" src="assets/images/ObiWan.jpg"></button>');
+                $("#displayCharacter").append(r);
+            } else if (name === luke) {
+                document.getElementById("button-Luke").style.display = "none";
+                var r = $('<button id="chosenCharacter" class="btn btn-success"><img width="200" height="150" src="assets/images/LukeSkywalker.jpg"></button>');
+                $("#displayCharacter").append(r);
+            } else if (name === maul) {
+                document.getElementById("button-Maul").style.display = "none";
+                var r = $('<button id="chosenCharacter" class="btn btn-success"><img width="200" height="150" src="assets/images/DarthMaul.jpg"></button>');
+                $("#displayCharacter").append(r);
+            } else if (name === vader) {
+                document.getElementById("button-Vader").style.display = "none";
+                var r = $('<button id="chosenCharacter" class="btn btn-success"><img width="200" height="150" src="assets/images/DarthVader.jpg"></button>');
+                $("#displayCharacter").append(r);
+            }
         }
-        else if (characterHP !== 0){
+        else if (characterHP !== 0) {
             enemyHP = name.hp;
             enemyCounter = name.counter;
+
+            if (name === obi) {
+                document.getElementById("button-Obi").style.display = "none";
+                var r = $('<button id="chosenCharacter" class="btn btn-danger"><img width="200" height="150" src="assets/images/ObiWan.jpg"></button>');
+                $("#displayEnemy").append(r);
+            } else if (name === luke) {
+                document.getElementById("button-Luke").style.display = "none";
+                var r = $('<button id="chosenCharacter" class="btn btn-danger"><img width="200" height="150" src="assets/images/LukeSkywalker.jpg"></button>');
+                $("#displayEnemy").append(r);
+            } else if (name === maul) {
+                document.getElementById("button-Maul").style.display = "none";
+                var r = $('<button id="chosenCharacter" class="btn btn-danger"><img width="200" height="150" src="assets/images/DarthMaul.jpg"></button>');
+                $("#displayEnemy").append(r);
+            } else if (name === vader) {
+                document.getElementById("button-Vader").style.display = "none";
+                var r = $('<button id="chosenCharacter" class="btn btn-danger"><img width="200" height="150" src="assets/images/DarthVader.jpg"></button>');
+                $("#displayEnemy").append(r);
+            }
         }
     }
 });
