@@ -33,6 +33,9 @@ body{
     text-align: left;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1250px) {
+    body{
+        background-image: url("../images/Background-Phone.jpg");
+    }
     
 }
