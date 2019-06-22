@@ -9,6 +9,6 @@ body{
     color: white;
 }
 
-#button-attack{
-    margin: 1.5% 0;
+@media only screen and (max-width: 1000px) {
+
 }
