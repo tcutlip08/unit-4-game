@@ -9,6 +9,30 @@ body{
     color: white;
 }
 
-@media only screen and (max-width: 1000px) {
+.top, .bottom{
+    margin: .5% 0;
+}
 
+#displayOptions{
+    text-align: center;
+}
+
+#displayFighters{
+    text-align: center;
+}
+
+#displayCharacter{
+    text-align: right;
+}
+
+#button-attack{
+    margin: 50px 0 50px 0;
+}
+
+#displayEnemy{
+    text-align: left;
+}
+
+@media only screen and (max-width: 1000px) {
+    
 }

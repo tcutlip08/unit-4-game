@@ -19,49 +19,41 @@
         <div>
             <hr>
         </div>
-        <div class="row" style="height: 250px;">
-            <div class="col">
-                <button id="button-Obi" class="btn btn-success">
+        <div class="row" id="displayOptions" style="margin: .5% 0";>
+            <div class="col obi">
+                <button id="button-Obi" class="btn btn-success top">
                     <h5>Obi Wan</h5><img width="150" height="115" src="assets\images\ObiWan.jpg">
                 </button>
             </div>
-            <div class="col">
-                <button id="button-Luke" class="btn btn-success">
+            <div class="col luke">
+                <button id="button-Luke" class="btn btn-success top">
                     <h5>Luke Skywalker</h5><img width="150" height="115" src="assets\images\LukeSkywalker.jpg">
                 </button>
             </div>
-            <div class="col">
-                <button id="button-Maul" class="btn btn-success">
+            <div class="col maul">
+                <button id="button-Maul" class="btn btn-success bottom">
                     <h5>Darth Maul</h5><img width="150" height="115" src="assets\images\DarthMaul.jpg">
                 </button>
             </div>
-            <div class="col">
-                <button id="button-Vader" class="btn btn-success">
+            <div class="col vader">
+                <button id="button-Vader" class="btn btn-success bottom">
                     <h5>Darth Vader</h5><img width="150" height="115" src="assets\images\DarthVader.jpg">
                 </button>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-3">
+        <div class="row" id="displayFighters">
+            <div class="col">
                 <div id="displayCharacter"></div>
             </div>
-            <div class="row">
-                <div class="col"></div>
-                <div class="col">
-                    <button id="button-attack" class="btn btn-danger" style="margin: 100% 20%">ATTACK</button>
-                </div>
-                <div class="col"></div>
+            <div class="col">
+                <button id="button-attack" class="btn btn-danger">ATTACK</button>
             </div>
-            <div class="col-md-3">
+            <div class="col">
                 <div id="displayEnemy"></div>
             </div>
-            <!-- <div class="col"></div> -->
         </div>
         <div class="row">
             <div class="col-md-3" id="winOrLose"></div>
-            <!-- <div class="col"></div>
-            <div class="col"></div>
-            <div class="col"></div> -->
         </div>
     </div>
     <script type="text/javascript" src="assets\javascript\game.js"></script>
