@@ -54,6 +54,7 @@ $(document).ready(function () {
         if (enemyHP <= 0) {
             if(winCount === 3){
                 $("#winOrLose").text("Congradulations, You Win");
+                $("#button-attack").remove();
             }
             enemyHP = 0;
         } else if (characterHP <= 0) {
