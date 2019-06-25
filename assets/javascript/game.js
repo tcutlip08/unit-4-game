@@ -54,6 +54,7 @@ $(document).ready(function () {
         if (enemyHP <= 0) {
             if (winCount === Object.keys(stats).length - 1) {
                 $("#showCharacterStats").append("<br>Congratulations, You Win");
+                $("#middleSection").append('<img width="245" height="115" margin-top: 10px;" src="assets/images/jarJarWin.gif"\>');
                 $("#button-attack").remove();
                 setTimeout(function () {
                     location.reload();
@@ -63,7 +64,9 @@ $(document).ready(function () {
         } else if (characterHP <= 0) {
             characterHP = 0;
             $("#showCharacterStats").text("HP: " + characterHP + " Att: " + characterIncAtt);
-            $("#winOrLose").text("Sorry, You Lose");
+            $("#showCharacterStats").append("<br>Sorry, You Lose");
+            $("#middleSection").append('<img width="250" height="175" margin-top: 10px;" src="assets/images/jarJarLose.gif"\>');
+            $("#button-attack").remove();
             setTimeout(function () {
                 location.reload();
             }, 5000);
@@ -79,25 +82,21 @@ $(document).ready(function () {
             characterHP = name.hp;
 
             if (name === stats.obi) {
-                // document.getElementById("button-Obi").style.display = "none";
                 $(".obi").remove();
                 var r = $('<button id="chosenCharacter" class="btn btn-success"><img width="175" height="115" src="assets/images/ObiWan.jpg"></button>');
                 appendChosenCharacterStats(r);
                 setButtonRed();
             } else if (name === stats.luke) {
-                // document.getElementById("button-Luke").style.display = "none";
                 $(".luke").remove();
                 var r = $('<button id="chosenCharacter" class="btn btn-success"><img width="175" height="115" src="assets/images/LukeSkywalker.jpg"></button>');
                 appendChosenCharacterStats(r);
                 setButtonRed();
             } else if (name === stats.maul) {
-                // document.getElementById("button-Maul").style.display = "none";
                 $(".maul").remove();
                 var r = $('<button id="chosenCharacter" class="btn btn-success"><img width="175" height="115" src="assets/images/DarthMaul.jpg"></button>');
                 appendChosenCharacterStats(r);
                 setButtonRed();
             } else if (name === stats.vader) {
-                // document.getElementById("button-Vader").style.display = "none";
                 $(".vader").remove();
                 var r = $('<button id="chosenCharacter" class="btn btn-success"><img width="175" height="115" src="assets/images/DarthVader.jpg"></button>');
                 appendChosenCharacterStats(r);
@@ -110,22 +109,18 @@ $(document).ready(function () {
             winCount++;
 
             if (name === stats.obi) {
-                // document.getElementById("button-Obi").style.display = "none";
                 $(".obi").remove();
                 var r = $('<button id="chosenEnemy" class="btn btn-danger"><img width="175" height="115" src="assets/images/ObiWan.jpg"></button>');
                 appendChosenEnemyStats(r)
             } else if (name === stats.luke) {
-                // document.getElementById("button-Luke").style.display = "none";
                 $(".luke").remove();
                 var r = $('<button id="chosenEnemy" class="btn btn-danger"><img width="175" height="115" src="assets/images/LukeSkywalker.jpg"></button>');
                 appendChosenEnemyStats(r)
             } else if (name === stats.maul) {
-                // document.getElementById("button-Maul").style.display = "none";
                 $(".maul").remove();
                 var r = $('<button id="chosenEnemy" class="btn btn-danger"><img width="175" height="115" src="assets/images/DarthMaul.jpg"></button>');
                 appendChosenEnemyStats(r)
             } else if (name === stats.vader) {
-                // document.getElementById("button-Vader").style.display = "none";
                 $(".vader").remove();
                 var r = $('<button id="chosenEnemy" class="btn btn-danger"><img width="175" height="115" src="assets/images/DarthVader.jpg"></button>');
                 appendChosenEnemyStats(r)
