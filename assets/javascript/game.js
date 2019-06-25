@@ -55,7 +55,7 @@ $(document).ready(function () {
 
         if (enemyHP <= 0) {
             if(winCount === Object.keys(stats).length - 1 ){
-                $("#winOrLose").text("Congradulations, You Win");
+                $("#winOrLose").text("Congratulations, You Win");
                 $("#button-attack").remove();
             }
             enemyHP = 0;
