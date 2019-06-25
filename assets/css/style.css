@@ -7,6 +7,7 @@ body{
     background-image: url("../images/Background2.jpg");
     background-size: cover;
     color: white;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .top, .bottom{
