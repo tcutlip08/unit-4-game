@@ -1,47 +1,47 @@
-#title{
+#title {
     text-align: right;
     width: 100%;
 }
 
-body{
+body {
     background-image: url("../images/Background2.jpg");
     background-size: cover;
     color: white;
     font-family: 'Orbitron', sans-serif;
 }
 
-.top, .bottom{
+.top, .bottom {
     margin: .5% 0;
 }
 
-#winOrLose{
+#winOrLose {
     width: 100%;
     float: center;
 }
 
-#displayOptions{
+#displayOptions {
+    text-align: center;
+    font-family: 5px;
+}
+
+#displayFighters {
     text-align: center;
 }
 
-#displayFighters{
-    text-align: center;
-}
-
-#displayCharacter{
+#displayCharacter {
     text-align: right;
 }
 
-#button-attack{
+#button-attack {
     margin: 50px 0 50px 0;
 }
 
-#displayEnemy{
+#displayEnemy {
     text-align: left;
 }
 
 @media only screen and (max-width: 1250px) {
-    body{
+    body {
         background-image: url("../images/Background-Phone.jpg");
     }
-    
 }

@@ -22,8 +22,6 @@ $(document).ready(function () {
         vader: { hp: 180, counter: 7 }
     };
 
-    console.log(Object.keys(stats).length);
-
     displayStartingStats(stats);
 
     $("#button-Obi").on("click", function () {
@@ -54,15 +52,21 @@ $(document).ready(function () {
         }
 
         if (enemyHP <= 0) {
-            if(winCount === Object.keys(stats).length - 1 ){
+            if (winCount === Object.keys(stats).length - 1) {
                 $("#showCharacterStats").append("<br>Congratulations, You Win");
                 $("#button-attack").remove();
+                setTimeout(function () {
+                    location.reload();
+                }, 5000);
             }
             enemyHP = 0;
         } else if (characterHP <= 0) {
             characterHP = 0;
             $("#showCharacterStats").text("HP: " + characterHP + " Att: " + characterIncAtt);
             $("#winOrLose").text("Sorry, You Lose");
+            setTimeout(function () {
+                location.reload();
+            }, 5000);
         }
 
         if (enemyHP === 0) {
@@ -77,25 +81,25 @@ $(document).ready(function () {
             if (name === stats.obi) {
                 // document.getElementById("button-Obi").style.display = "none";
                 $(".obi").remove();
-                var r = $('<button id="chosenCharacter" class="btn btn-success"><img width="150" height="115" src="assets/images/ObiWan.jpg"></button>');
+                var r = $('<button id="chosenCharacter" class="btn btn-success"><img width="175" height="115" src="assets/images/ObiWan.jpg"></button>');
                 appendChosenCharacterStats(r);
                 setButtonRed();
             } else if (name === stats.luke) {
                 // document.getElementById("button-Luke").style.display = "none";
                 $(".luke").remove();
-                var r = $('<button id="chosenCharacter" class="btn btn-success"><img width="150" height="115" src="assets/images/LukeSkywalker.jpg"></button>');
+                var r = $('<button id="chosenCharacter" class="btn btn-success"><img width="175" height="115" src="assets/images/LukeSkywalker.jpg"></button>');
                 appendChosenCharacterStats(r);
                 setButtonRed();
             } else if (name === stats.maul) {
                 // document.getElementById("button-Maul").style.display = "none";
                 $(".maul").remove();
-                var r = $('<button id="chosenCharacter" class="btn btn-success"><img width="150" height="115" src="assets/images/DarthMaul.jpg"></button>');
+                var r = $('<button id="chosenCharacter" class="btn btn-success"><img width="175" height="115" src="assets/images/DarthMaul.jpg"></button>');
                 appendChosenCharacterStats(r);
                 setButtonRed();
             } else if (name === stats.vader) {
                 // document.getElementById("button-Vader").style.display = "none";
                 $(".vader").remove();
-                var r = $('<button id="chosenCharacter" class="btn btn-success"><img width="150" height="115" src="assets/images/DarthVader.jpg"></button>');
+                var r = $('<button id="chosenCharacter" class="btn btn-success"><img width="175" height="115" src="assets/images/DarthVader.jpg"></button>');
                 appendChosenCharacterStats(r);
                 setButtonRed();
             }
@@ -108,22 +112,22 @@ $(document).ready(function () {
             if (name === stats.obi) {
                 // document.getElementById("button-Obi").style.display = "none";
                 $(".obi").remove();
-                var r = $('<button id="chosenEnemy" class="btn btn-danger"><img width="150" height="115" src="assets/images/ObiWan.jpg"></button>');
+                var r = $('<button id="chosenEnemy" class="btn btn-danger"><img width="175" height="115" src="assets/images/ObiWan.jpg"></button>');
                 appendChosenEnemyStats(r)
             } else if (name === stats.luke) {
                 // document.getElementById("button-Luke").style.display = "none";
                 $(".luke").remove();
-                var r = $('<button id="chosenEnemy" class="btn btn-danger"><img width="150" height="115" src="assets/images/LukeSkywalker.jpg"></button>');
+                var r = $('<button id="chosenEnemy" class="btn btn-danger"><img width="175" height="115" src="assets/images/LukeSkywalker.jpg"></button>');
                 appendChosenEnemyStats(r)
             } else if (name === stats.maul) {
                 // document.getElementById("button-Maul").style.display = "none";
                 $(".maul").remove();
-                var r = $('<button id="chosenEnemy" class="btn btn-danger"><img width="150" height="115" src="assets/images/DarthMaul.jpg"></button>');
+                var r = $('<button id="chosenEnemy" class="btn btn-danger"><img width="175" height="115" src="assets/images/DarthMaul.jpg"></button>');
                 appendChosenEnemyStats(r)
             } else if (name === stats.vader) {
                 // document.getElementById("button-Vader").style.display = "none";
                 $(".vader").remove();
-                var r = $('<button id="chosenEnemy" class="btn btn-danger"><img width="150" height="115" src="assets/images/DarthVader.jpg"></button>');
+                var r = $('<button id="chosenEnemy" class="btn btn-danger"><img width="175" height="115" src="assets/images/DarthVader.jpg"></button>');
                 appendChosenEnemyStats(r)
             }
         }
